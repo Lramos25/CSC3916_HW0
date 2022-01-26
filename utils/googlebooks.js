@@ -11,7 +11,16 @@ module.exports = async (phrase) => {
     return JSON.stringify(results.data);
 }
 
-/*  console.log(results.data);
+/*  
+TODO: Modify to Return an object that contains 
+{  
+data: response.data,  
+status: response.status,  
+statusText: response.statusText,  
+headers: response.headers, 
+requestHeader: response.config.headers 
+} 
+    console.log(results.data);
     console.log(results.status);
     console.log(results.statusText);
     console.log(results.headers);
@@ -23,4 +32,5 @@ module.exports = async (phrase) => {
             format: 'json',
             q: `${phrase}`,
         },
-    })*/
+    })
+    */
