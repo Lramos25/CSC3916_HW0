@@ -8,19 +8,18 @@ module.exports = async (phrase) => {
         }
     })
 
-    return JSON.stringify(results.data);
+    let customObject = {
+        data: results.data,
+        status: results.status,
+        statusText: results.statusText,
+        headers: results.headers,
+        requestHeader: results.config.headers
+    }
+
+    return JSON.stringify(customObject);
 }
 
-/*  
-TODO: Modify to Return an object that contains 
-{  
-data: response.data,  
-status: response.status,  
-statusText: response.statusText,  
-headers: response.headers, 
-requestHeader: response.config.headers 
-} 
-    console.log(results.data);
+/*  console.log(results.data);
     console.log(results.status);
     console.log(results.statusText);
     console.log(results.headers);
@@ -32,5 +31,4 @@ requestHeader: response.config.headers
             format: 'json',
             q: `${phrase}`,
         },
-    })
-    */
+    })*/
